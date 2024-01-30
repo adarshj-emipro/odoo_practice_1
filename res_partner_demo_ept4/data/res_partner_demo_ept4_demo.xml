@@ -10,7 +10,7 @@
             <field name="state">Gujarat</field>
             <field name="zip_code">360005</field>
             <field name="country">India</field>
-            <field name="birthdate" eval="(datetime.today().strftime('%Y-%m-%d %H:%M:%S'))"/>
+            <field name="birthdate" eval="DateTime(2004,11,15)"/>
             <field name="age">20</field>
             <field name="weight">60</field>
             <field name="description">for demonstration</field>
@@ -28,7 +28,7 @@
             <field name="state">Bihar</field>
             <field name="zip_code">360005</field>
             <field name="country">India</field>
-            <field name="birthdate" eval="(datetime.today().strftime('%Y-%m-%d %H:%M:%S'))"/>
+            <field name="birthdate" eval="DateTime(2000,6,20)"/>
             <field name="age">20</field>
             <field name="weight">60</field>
             <field name="description">for demonstration</field>
@@ -46,7 +46,7 @@
             <field name="state">Bihar</field>
             <field name="zip_code">360005</field>
             <field name="country">India</field>
-            <field name="birthdate" eval="(datetime.today().strftime('%Y-%m-%d %H:%M:%S'))"/>
+            <field name="birthdate" eval="DateTime(2006,11,3)"/>
             <field name="age">20</field>
             <field name="weight">60</field>
             <field name="description">for demonstration</field>
@@ -64,7 +64,7 @@
             <field name="state">Bihar</field>
             <field name="zip_code">360005</field>
             <field name="country">India</field>
-            <field name="birthdate" eval="(datetime.today().strftime('%Y-%m-%d %H:%M:%S'))"/>
+            <field name="birthdate" eval="DateTime(2005,11,12)"/>
             <field name="age">20</field>
             <field name="weight">60</field>
             <field name="description">for demonstration</field>
@@ -82,7 +82,7 @@
             <field name="state">UP</field>
             <field name="zip_code">360005</field>
             <field name="country">India</field>
-            <field name="birthdate" eval="(datetime.today().strftime('%Y-%m-%d %H:%M:%S'))"/>
+            <field name="birthdate" eval="DateTime(2004,11,15)"/>
             <field name="age">20</field>
             <field name="weight">60</field>
             <field name="description">for demonstration</field>

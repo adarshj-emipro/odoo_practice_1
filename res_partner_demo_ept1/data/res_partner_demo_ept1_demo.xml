@@ -10,7 +10,7 @@
             <field name="state">Gujarat</field>
             <field name="zip_code">360005</field>
             <field name="country">India</field>
-            <field name="birthdate" eval="(DateTime.today() - relativedelta(months=1)).strftime('%Y-%m-%d %H:%M')"/>
+            <field name="birthdate" eval="DateTime(2004,11,15)"/>
             <field name="age">20</field>
             <field name="weight">60</field>
             <field name="description">for demonstration</field>
@@ -28,7 +28,7 @@
             <field name="state">Delhi</field>
             <field name="zip_code">100025</field>
             <field name="country">India</field>
-            <field name="birthdate" eval="(DateTime.today() - relativedelta(months=1)).strftime('%Y-%m-%d %H:%M')"/>
+            <field name="birthdate" eval="DateTime(2004,1,1)"/>
             <field name="age">20</field>
             <field name="weight">56</field>
             <field name="description">for demonstration</field>
@@ -46,7 +46,7 @@
             <field name="state">Delhi</field>
             <field name="zip_code">200052</field>
             <field name="country">India</field>
-             <field name="birthdate" eval="(DateTime.today() - relativedelta(months=1)).strftime('%Y-%m-%d %H:%M')"/>
+            <field name="birthdate" eval="DateTime(2001,10,21)"/>
             <field name="age">20</field>
             <field name="weight">56</field>
             <field name="description">for demonstration</field>
@@ -64,7 +64,7 @@
             <field name="state">Kolkata</field>
             <field name="zip_code">600325</field>
             <field name="country">India</field>
-             <field name="birthdate" eval="(DateTime.today() - relativedelta(months=1)).strftime('%Y-%m-%d %H:%M')"/>
+            <field name="birthdate" eval="DateTime(2006,7,18)"/>
             <field name="age">15</field>
             <field name="weight">30</field>
             <field name="description">for demonstration</field>
@@ -82,7 +82,7 @@
             <field name="state">U.P</field>
             <field name="zip_code">300056</field>
             <field name="country">India</field>
-             <field name="birthdate" eval="(DateTime.today() - relativedelta(months=1)).strftime('%Y-%m-%d %H:%M')"/>
+            <field name="birthdate" eval="DateTime(2016,5,2)"/>
             <field name="age">18</field>
             <field name="weight">46</field>
             <field name="description">for demonstration</field>
@@ -90,7 +90,6 @@
             <field name="details">Demo Data</field>
             <field name="is_spectacles">False</field>
         </record>
-
 
 
     </data>
