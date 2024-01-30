@@ -30,6 +30,7 @@
                             <field name="birthdate"/>
                             <field name="age"/>
                             <field name="weight"/>
+                            <field name="details"/>
                         </group>
                         <group>
                             <field name="street1"/>
