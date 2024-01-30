@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--    Tree view-->
+    <record id="res_country_demo_ept_view_tree" model="ir.ui.view">
+        <field name="name">res.country.demo.ept.view.tree</field>
+        <field name="model">res.country.demo.ept</field>
+        <field name="arch" type="xml">
+            <tree string="Country Demo Ept Tree View">
+                <field name="id"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--    Form View-->
+    <record id="res_country_demo_ept_view_form" model="ir.ui.view">
+        <field name="name">res.country.demo.ept.view.form</field>
+        <field name="model">res.country.demo.ept</field>
+        <field name="arch" type="xml">
+            <form string="Country Ept Form View">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="id"/>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="active"/>
+                        </group>
+                        <group>
+                            <field name="create_date"/>
+                            <field name="write_date"/>
+                            <field name="create_uid"/>
+                            <field name="write_uid"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    Search View-->
+    <record id="res_country_demo_ept_view_search" model="ir.ui.view">
+        <field name="name">res.country.demo.ept.view.search</field>
+        <field name="model">res.country.demo.ept</field>
+        <field name="arch" type="xml">
+            <search string="Country Ept Search View">
+                <field name="name"/>
+                <field name="code"/>
+                <filter string="Active" name="active" domain="[('active','=',True)]"/>
+                <filter string="Inactive" name="active" domain="[('active','=',False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <!--Actions-->
+
+    <record id="res_country_demo_ept_action" model="ir.actions.act_window">
+        <field name="name">Res Country Demo Ept Actions</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.country.demo.ept</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="res_country_demo_ept_view_search"/>
+    </record>
+
+    <!--    Menu-->
+
+    <menuitem id="res_country_demo_ept_menu_root"
+              name="Localization"
+    />
+    <menuitem id="res_country_demo_ept_menu_child1"
+              name="Details"
+              parent="res_country_demo_ept_menu_root"
+    />
+    <menuitem id="res_country_demo_ept_menu_child2"
+              name="Countries"
+              parent="res_country_demo_ept_menu_child1"
+              action="res_country_demo_ept_action"
+    />
+
+</odoo>
