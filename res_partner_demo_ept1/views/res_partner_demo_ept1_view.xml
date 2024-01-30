@@ -27,13 +27,9 @@
                             <field name="email"/>
                             <field name="gender"/>
                             <field name="is_spectacles"/>
-                        </group>
-                        <group>
                             <field name="birthdate"/>
                             <field name="age"/>
                             <field name="weight"/>
-                            <field name="description"/>
-                            <field name="photo"/>
                         </group>
                         <group>
                             <field name="street1"/>
@@ -42,6 +38,8 @@
                             <field name="state"/>
                             <field name="zip_code"/>
                             <field name="country"/>
+                            <field name="description"/>
+                            <field name="photo"/>
                         </group>
 
                     </group>
@@ -94,16 +92,16 @@
     <!--    Menu-->
 
     <menuitem id="res_partner_demo_ept1_menu_root"
-              name="Contact"
+              name="Contact-1"
     />
 
     <menuitem id="res_partner_demo_ept1_menu_child1"
-              name="Customer Details"
+              name="Customer Details-1"
               parent="res_partner_demo_ept1_menu_root"
     />
 
     <menuitem id="res_partner_demo_ept1_menu_child2"
-              name="Customers"
+              name="Customers-1"
               parent="res_partner_demo_ept1_menu_child1"
               action="res_partner_demo_ept1_action"
     />

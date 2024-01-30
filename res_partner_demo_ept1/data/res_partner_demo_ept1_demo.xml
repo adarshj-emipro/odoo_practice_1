@@ -10,7 +10,7 @@
             <field name="state">Gujarat</field>
             <field name="zip_code">360005</field>
             <field name="country">India</field>
-            <field name="birthdate">01/10/2024</field>
+            <field name="birthdate" eval="(DateTime.today() - relativedelta(months=1)).strftime('%Y-%m-%d %H:%M')"/>
             <field name="age">20</field>
             <field name="weight">60</field>
             <field name="description">for demonstration</field>
@@ -38,7 +38,7 @@
         </record>
 
         <record id="res_partner_demo_ept1_demo_record3" model="res.partner.demo.ept1">
-            <field name="name">Amar Singh</field>
+            <field name="name">Aanshi Singh</field>
             <field name="email">xxr@email.com</field>
             <field name="street1">CCF</field>
             <field name="street2">NAHGFS</field>
@@ -50,7 +50,7 @@
             <field name="age">20</field>
             <field name="weight">56</field>
             <field name="description">for demonstration</field>
-            <field name="gender">Male</field>
+            <field name="gender">Female</field>
             <field name="details">Demo Data</field>
             <field name="is_spectacles">False</field>
         </record>
@@ -74,7 +74,7 @@
         </record>
 
         <record id="res_partner_demo_ept1_demo_record5" model="res.partner.demo.ept1">
-            <field name="name">Ajit Suman</field>
+            <field name="name">Shakshi Suman</field>
             <field name="email">kkk@email.com</field>
             <field name="street1">ASDF</field>
             <field name="street2">CJH</field>
@@ -86,7 +86,7 @@
             <field name="age">18</field>
             <field name="weight">46</field>
             <field name="description">for demonstration</field>
-            <field name="gender">Male</field>
+            <field name="gender">Female</field>
             <field name="details">Demo Data</field>
             <field name="is_spectacles">False</field>
         </record>
