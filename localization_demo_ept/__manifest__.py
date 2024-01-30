@@ -9,6 +9,7 @@
     'data':[
         'security/ir.model.access.csv',
         'views/res_country_demo_ept_views.xml',
+        'views/res_state_demo_ept_views.xml',
         'data/res_country_demo_ept_demo.xml'
     ],
     'application':True
