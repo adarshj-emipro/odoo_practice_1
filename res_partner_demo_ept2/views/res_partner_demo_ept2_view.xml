@@ -43,7 +43,7 @@
                             <field name="zip_code"/>
                             <field name="country"/>
                             <field name="description"/>
-                            <field name="photo"/>
+                            <field name="photo" widget="image" options="{'size': [150, 150]}"/>
                         </group>
                     </group>
                 </sheet>

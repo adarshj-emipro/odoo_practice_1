@@ -62,6 +62,12 @@
         <field name="res_model">res.country.demo.ept</field>
         <field name="view_mode">tree,form</field>
         <field name="search_view_id" ref="res_country_demo_ept_view_search"/>
+        <field name="context">{'default_active':True}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create new Record.
+            </p>
+        </field>
     </record>
 
     <!--    Menu-->
