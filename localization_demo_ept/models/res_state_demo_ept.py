@@ -7,5 +7,5 @@ class ResStateDemoEpt(models.Model):
 
     name = fields.Char(string='State Name', help='name of the state')
     code = fields.Char(string='State Code', help='code of the state')
-    country_name = fields.Char(string='Country Name', copy=True, help='Name of the country')
+    country_name = fields.Char(string='Country Name', copy=False, help='Name of the country')
     active = fields.Boolean(string='Is Active', default=True, help='is record active')
