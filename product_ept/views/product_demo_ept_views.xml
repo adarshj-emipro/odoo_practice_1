@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--    Tree View-->
+    <record id="product_demo_ept_view_tree" model="ir.ui.view">
+        <field name="name">product.demo.ept.view.tree</field>
+        <field name="model">product.demo.ept</field>
+        <field name="arch" type="xml">
+            <tree string="Product Ept Tree View">
+                <field name="name"/>
+                <field name="default_code"/>
+                <field name="barcode"/>
+                <field name="product_type"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--    Form View-->
+    <record id="product_demo_ept_view_from" model="ir.ui.view">
+        <field name="name">product.demo.ept.view.from</field>
+        <field name="model">product.demo.ept</field>
+        <field name="arch" type="xml">
+            <form string="Product Ept form View">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="default_code"/>
+                            <field name="barcode"/>
+                            <field name="can_sold" widget="boolean_toggle"/>
+                            <field name="product_type" widget="radio"/>
+                        </group>
+                        <group>
+                            <field name="sale_price"/>
+                            <field name="cost_price"/>
+                            <field name="warehouse"/>
+                            <field name="active" widget="boolean_toggle"/>
+                            <field name="product_image" widget="image" options="{'size':[120,120]}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description" name="description">
+                            <group>
+                                <field name="website_description"/>
+                            </group>
+                        </page>
+                        <page string="Notes" name="internal_note">
+                            <group>
+                                <field name="internal_note"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!--    Search View-->
+    <record id="product_demo_ept_view_search" model="ir.ui.view">
+        <field name="name">product.demo.ept.view.search</field>
+        <field name="model">product.demo.ept</field>
+        <field name="arch" type="xml">
+            <search string="Product EPT search View">
+                <field name="name"/>
+                <field name="default_code"/>
+                <field name="product_type"/>
+                <filter name="can_sold" string="Can be sold" domain="[('can_sold','=',True)]"/>
+                <filter name="can_sold" string="Cannot be Sold" domain="[('can_sold','=',False)]"/>
+                <group expand="0" string="Group By">
+                    <filter name="product_type" string="Product Type" context="{'group_by':'product_type'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!--    Action-->
+
+    <record id="product_demo_ept_actions" model="ir.actions.act_window">
+        <field name="name">Product Demo Action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.demo.ept</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="product_demo_ept_view_search"/>
+        <field name="context">{'default_can_sold':True}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create New Record.
+            </p>
+        </field>
+    </record>
+
+
+    <!--    Menu-->
+    <menuitem id="product_demo_ept_menu_root"
+              name="My Sales"
+              web_icon="product_ept,static/description/icon.png"
+    />
+    <menuitem id="product_demo_ept_menu_child"
+              name="Products"
+              parent="product_demo_ept_menu_root"
+              action="product_demo_ept_actions"
+    />
+
+
+</odoo>
