@@ -10,7 +10,7 @@
                 <field name="name"/>
                 <field name="code"/>
                 <field name="country_name"/>
-                <field name="active"/>
+                <field name="active" widget="boolean_toggle"/>
             </tree>
         </field>
     </record>
@@ -62,7 +62,7 @@
     <!--    Action -->
 
     <record id="res_state_demo_ept_actions" model="ir.actions.act_window">
-        <field name="name">Res State Demo EPT Action</field>
+        <field name="name">State EPT Actions</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">res.state.demo.ept</field>
         <field name="view_mode">tree,form</field>

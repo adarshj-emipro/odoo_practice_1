@@ -31,7 +31,7 @@
 
     <!--    Action-->
     <record id="res_city_demo_ept_actions" model="ir.actions.act_window">
-        <field name="name">City Record Actions</field>
+        <field name="name">City EPT Actions</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">res.city.demo.ept</field>
         <field name="view_mode">tree</field>

@@ -9,7 +9,7 @@
                 <field name="id"/>
                 <field name="name"/>
                 <field name="code"/>
-                <field name="active" />
+                <field name="active" widget="boolean_toggle"/>
             </tree>
         </field>
     </record>
@@ -57,7 +57,7 @@
     <!--Actions-->
 
     <record id="res_country_demo_ept_action" model="ir.actions.act_window">
-        <field name="name">Res Country Demo Ept Actions</field>
+        <field name="name">Country Ept Actions</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">res.country.demo.ept</field>
         <field name="view_mode">tree,form</field>
@@ -74,6 +74,7 @@
 
     <menuitem id="res_country_demo_ept_menu_root"
               name="Localization"
+              web_icon="localization_demo_ept,static/description/icon.png"
     />
     <menuitem id="res_country_demo_ept_menu_child1"
               name="Details"
