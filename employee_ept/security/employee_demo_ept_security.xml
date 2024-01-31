@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+<!--    Category-->
+    <record id="employee_demo_ept_category" model="ir.module.category">
+        <field name="name">Employee Management</field>
+        <field name="description">This category is designed for Employee Ept module.</field>
+        <field name="sequence">40</field>
+    </record>
+
+<!--    Employee Group-->
+    <record id="employee_demo_ept_group_employee" model="res.groups">
+        <field name="name">Employee</field>
+        <field name="category_id" ref="employee_demo_ept_category"/>
+    </record>
+
+    <!--    Employee Manager Group-->
+    <record id="employee_demo_ept_group_employee_manager" model="res.groups">
+        <field name="name">Employee Manager</field>
+        <field name="category_id" ref="employee_demo_ept_category"/>
+        <field name="implied_ids" eval="[(4,ref('employee_demo_ept_group_employee'))]"/>
+    </record>
+
+</odoo>
