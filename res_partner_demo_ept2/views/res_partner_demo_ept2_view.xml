@@ -98,6 +98,7 @@
     <!--    Menus-->
     <menuitem id="res_partner_demo_ept2_menu_root"
               name="Contact-2"
+              web_icon="res_partner_demo_ept2,static/description/icon.png"
     />
     <menuitem id="res_partner_demo_ept2_menu_child1"
               name="Customer Details-2"

@@ -95,6 +95,7 @@
     <!--    Menu-->
     <menuitem id="res_partner_demo_ept4_menu_root"
               name="Contact-4"
+              web_icon="res_partner_demo_ept4,static/description/icon.png"
     />
     <menuitem id="res_partner_demo_ept4_menu_child1"
               name="Customer Details-4"

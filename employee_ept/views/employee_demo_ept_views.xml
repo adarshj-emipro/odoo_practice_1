@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+    <!--    Tree view-->
+    <record id="employee_demo_ept_view_tree" model="ir.ui.view">
+        <field name="name">employee.demo.ept.view.tree</field>
+        <field name="model">employee.demo.ept</field>
+        <field name="arch" type="xml">
+            <tree string="Employee Ept tree view">
+                <field name="name"/>
+                <field name="d_name"/>
+                <field name="position"/>
+                <field name="salary"/>
+                <field name="hire_date"/>
+                <field name="gender"/>
+                <field name="type"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--    Form view-->
+    <record id="employee_demo_ept_view_form" model="ir.ui.view">
+        <field name="name">employee.demo.ept.view.form</field>
+        <field name="model">employee.demo.ept</field>
+        <field name="arch" type="xml">
+            <form string="Employee Ept Form View">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="d_name"/>
+                            <field name="position"/>
+                            <field name="salary"/>
+                        </group>
+                        <group>
+                            <field name="hire_date"/>
+                            <field name="gender"/>
+                            <field name="type"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    Search view-->
+    <record id="employee_demo_ept_view_search" model="ir.ui.view">
+        <field name="name">employee.demo.ept.view.search</field>
+        <field name="model">employee.demo.ept</field>
+        <field name="arch" type="xml">
+            <search string="Employee Ept Search View">
+                <field name="name"/>
+                <field name="d_name"/>
+                <field name="position"/>
+                <filter name="type" string="Permanent" domain="[('type','=','Permanent')]"/>
+                <filter name="type" string="Ad Hoc" domain="[('type','=','Ad Hoc')]"/>
+                <filter name="gender" string="Male" domain="[('gender','=','Male')]"/>
+                <filter name="gender" string="Female" domain="[('gender','=','Female')]"/>
+                <filter name="gender" string="Transgender" domain="[('gender','=','Transgender')]"/>
+                <group expand="0" string="Group By">
+                    <filter name="position" string="Job Position" context="{'group_by':'position'}"/>
+                    <filter name="d_name" string="Department Name" context="{'group_by':'d_name'}"/>
+                    <filter name="type" string="Job Type" context="{'group_by':'type'}"/>
+                    <filter name="gender" string="Gender" context="{'group_by':'gender'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!--    Actions-->
+
+    <record id="employee_demo_ept_action" model="ir.actions.act_window">
+        <field name="name">Employee Ept Action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">employee.demo.ept</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="employee_demo_ept_view_search"/>
+        <field name="context">{'default_type':'Permanent'}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create New Record Now.
+            </p>
+        </field>
+    </record>
+
+
+    <!--    Menu-->
+    <menuitem id="employee_demo_ept_menu_root"
+              name="Employee"
+              web_icon="employee_ept,static/description/icon.png"
+    />
+    <menuitem id="employee_demo_ept_menu_child1"
+              name="Employee Details"
+              parent="employee_demo_ept_menu_root"
+    />
+    <menuitem id="employee_demo_ept_menu_child2"
+              name="All Employees"
+              parent="employee_demo_ept_menu_child1"
+              action="employee_demo_ept_action"
+    />
+
+
+</odoo>

@@ -94,6 +94,7 @@
 
     <menuitem id="res_partner_demo_ept1_menu_root"
               name="Contact-1"
+              web_icon="res_partner_demo_ept1,static/description/icon.png"
     />
 
     <menuitem id="res_partner_demo_ept1_menu_child1"
