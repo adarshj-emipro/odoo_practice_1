@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--    Tree View-->
+
+    <record id="res_city_demo_ept_view_tree" model="ir.ui.view">
+        <field name="name">res.city.demo.ept.view.tree</field>
+        <field name="model">res.city.demo.ept</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom" string="City Ept Tree view">
+                <field name="id"/>
+                <field name="name"/>
+                <field name="state_name"/>
+                <field name="active" widget="boolean_toggle"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--    Search View-->
+    <record id="res_city_demo_ept_view_search" model="ir.ui.view">
+        <field name="name">res.city.demo.ept.view.search</field>
+        <field name="model">res.city.demo.ept</field>
+        <field name="arch" type="xml">
+            <search string="City Ept search view">
+                <field name="name"/>
+                <field name="state_name"/>
+                <filter name="city_filter" string="Active" domain="[('active','=',True)]"/>
+                <filter name="city_filter" string="Inactive" domain="[('active','=',False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <!--    Action-->
+    <record id="res_city_demo_ept_actions" model="ir.actions.act_window">
+        <field name="name">City Record Actions</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.city.demo.ept</field>
+        <field name="view_mode">tree</field>
+        <field name="search_view_id" ref="res_city_demo_ept_view_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No Records.
+            </p>
+        </field>
+    </record>
+
+    <!--    Menu-->
+    <menuitem id="res_city_demo_ept_menu_root"
+              name="City"
+              parent="res_country_demo_ept_menu_child1"
+              action="res_city_demo_ept_actions"
+    />
+
+
+</odoo>

@@ -28,7 +28,7 @@
                             <field name="name"/>
                             <field name="code"/>
                             <field name="country_name"/>
-                            <field name="active"/>
+                            <field name="active" widget="boolean_toggle"/>
                         </group>
                         <group>
                             <field name="create_date"/>

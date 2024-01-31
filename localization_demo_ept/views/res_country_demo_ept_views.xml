@@ -9,7 +9,7 @@
                 <field name="id"/>
                 <field name="name"/>
                 <field name="code"/>
-                <field name="active"/>
+                <field name="active" />
             </tree>
         </field>
     </record>
@@ -26,7 +26,7 @@
                             <field name="id"/>
                             <field name="name"/>
                             <field name="code"/>
-                            <field name="active"/>
+                            <field name="active" widget="boolean_toggle"/>
                         </group>
                         <group>
                             <field name="create_date"/>
