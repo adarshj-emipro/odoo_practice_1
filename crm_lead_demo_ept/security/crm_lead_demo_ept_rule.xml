@@ -15,8 +15,8 @@
         <field name="name">CRM Lead Deno: Limited View</field>
         <field name="model_id" ref="model_crm_lead_demo_ept"/>
         <field name="groups" eval="[(4,ref('crm_lead_demo_ept.crm_lead_demo_ept_group_salesperson'))]"/>
-        <field name="domain_force">['|','|',('channel','=','Television'),('channel','=','Newspaper'),'|',('channel','=','Phone Call'),('channel','=','SMS')]</field>
-
+<!--        <field name="domain_force">['|','|',('channel','=','Television'),('channel','=','Newspaper'),'|',('channel','=','Phone Call'),('channel','=','SMS')]</field>-->
+        <field name="domain_force">[('channel','in',['Television','Newspaper','Phone Call','SMS'])]</field>
     </record>
 
 </odoo>
