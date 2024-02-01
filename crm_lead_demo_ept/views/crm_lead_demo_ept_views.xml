@@ -19,6 +19,8 @@
                 <field name="channel"/>
                 <field name="state"/>
                 <field name="next_followup_date" widget="date"/>
+                <field name="won_date" widget="date"/>
+                <field name="lost_reason"/>
             </tree>
 
         </field>
@@ -47,10 +49,10 @@
                             <field name="channel"/>
                         </group>
                         <group>
-                            <field name="won_date" widget="date"/>
-                            <field name="lost_reason"/>
                             <field name="expected_revenue"/>
                             <field name="next_followup_date" widget="date"/>
+                            <field name="won_date" widget="date" invisible="state != 'Won'" />
+                            <field name="lost_reason" invisible="state != 'Lost'"/>
                         </group>
                     </group>
                 </sheet>
