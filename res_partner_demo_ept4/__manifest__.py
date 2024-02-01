@@ -10,6 +10,10 @@
         'security/ir.model.access.csv',
         'views/res_partner_demo_ept4_view.xml',
         'data/res_partner_demo_ept4_demo.xml'
+
+    ],
+    'demo': [
+        'data/res_partner_demo_ept4_demo.xml'
     ],
     'application': True
 }
