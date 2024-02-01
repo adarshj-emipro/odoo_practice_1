@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--    Tree View-->
+
+    <record id="crm_lead_demo_ept_view_tree" model="ir.ui.view">
+        <field name="name">crm.lead.demo.ept.view.tree</field>
+        <field name="model">crm.lead.demo.ept</field>
+        <field name="arch" type="xml">
+            <tree string="Crm Lead Tree View"
+                  decoration-danger="state == 'Lost'"
+                  decoration-success="state == 'Won'"
+                  decoration-warning="state == 'Proposition'"
+            >
+                <field name="name"/>
+                <field name="customer_email" widget="email"/>
+                <field name="salesperson"/>
+                <field name="sales_team"/>
+                <field name="campaign"/>
+                <field name="channel"/>
+                <field name="state"/>
+                <field name="next_followup_date" widget="date"/>
+            </tree>
+
+        </field>
+    </record>
+
+    <!--    Form View-->
+
+    <record id="crm_lead_demo_ept_view_form" model="ir.ui.view">
+        <field name="name">crm.lead.demo.ept.view.form</field>
+        <field name="model">crm.lead.demo.ept</field>
+        <field name="arch" type="xml">
+            <form string="CRM Lead Form View">
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="New,Qualified,Proposition,Won,Lost"
+                           options="{'clickable': True}"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="customer_email" widget="email"/>
+                            <field name="customer_phone" widget="phone"/>
+                            <field name="salesperson"/>
+                            <field name="sales_team"/>
+                            <field name="campaign"/>
+                            <field name="channel"/>
+                        </group>
+                        <group>
+                            <field name="won_date" widget="date"/>
+                            <field name="lost_reason"/>
+                            <field name="expected_revenue"/>
+                            <field name="next_followup_date" widget="date"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    Search View-->
+
+    <record id="crm_lead_demo_ept_view_search" model="ir.ui.view">
+        <field name="name">crm.lead.demo.ept.view.search</field>
+        <field name="model">crm.lead.demo.ept</field>
+        <field name="arch" type="xml">
+            <search string="CRM Lead search View">
+                <field name="name"/>
+                <field name="customer_email"/>
+                <field name="customer_phone"/>
+                <filter name="next_followup_date" string="Today"
+                        domain="[('next_followup_date','=',datetime.date.today().strftime('%%Y-%%m-%%d'))]"/>
+                <group expand="0" string="Group by">
+                    <filter name="channel" string="Channel" context="{'group_by':'channel'}"/>
+                </group>
+            </search>
+
+        </field>
+    </record>
+
+
+    <!--    Action-->
+
+    <record id="crm_lead_demo_ept_action" model="ir.actions.act_window">
+        <field name="name">CRM Lead Action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">crm.lead.demo.ept</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="crm_lead_demo_ept_view_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create new Record to Display.
+            </p>
+        </field>
+    </record>
+
+    <!--    Menu-->
+
+    <menuitem id="crm_lead_demo_ept_menu_root"
+              name="Leads"
+              web_icon="crm_lead_demo_ept,static/description/icon.png"
+    />
+    <menuitem id="crm_lead_demo_ept_menu_child1"
+              name="Customer Details"
+              parent="crm_lead_demo_ept_menu_root"
+    />
+    <menuitem id="crm_lead_demo_ept_menu_child2"
+              name="Customers"
+              parent="crm_lead_demo_ept_menu_child1"
+              action="crm_lead_demo_ept_action"
+    />
+
+
+</odoo>

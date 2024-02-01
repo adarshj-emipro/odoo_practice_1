@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!--    Category creation-->
+    <record id="crm_lead_demo_ept_category" model="ir.module.category">
+        <field name="name">CRM Lead Management</field>
+        <field name="description">This is the category fro crm lead demo ept module.</field>
+        <field name="sequence">1</field>
+    </record>
+
+<!--    Creating the Salesperson group-->
+    <record id="crm_lead_demo_ept_group_salesperson" model="res.groups">
+        <field name="name">Salesperson</field>
+        <field name="category_id" ref="crm_lead_demo_ept_category"/>
+    </record>
+
+<!--    Creating the Salesmanager Group-->
+    <record id="crm_lead_demo_ept_group_salesmanager" model="res.groups">
+        <field name="name">Salesmanager</field>
+        <field name="category_id" ref="crm_lead_demo_ept_category"/>
+        <field name="implied_ids" eval="[(4,ref('crm_lead_demo_ept_group_salesperson'))]"/>
+    </record>
+
+
+
+</odoo>

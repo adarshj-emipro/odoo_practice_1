@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--    Record rules for Salesmanager-->
+    <record id="crm_lead_demo_ept_rules_salesmanager" model="ir.rule">
+        <field name="name">CRM Lead Demo: All View</field>
+        <field name="model_id" ref="model_crm_lead_demo_ept"/>
+        <field name="groups" eval="[(4,ref('crm_lead_demo_ept.crm_lead_demo_ept_group_salesmanager'))]"/>
+        <field name="domain_force">[(1,'=',1)]</field>
+
+    </record>
+
+
+        <!--    Record rules for Salesperson-->
+    <record id="crm_lead_demo_ept_rules_salesperson" model="ir.rule">
+        <field name="name">CRM Lead Deno: Limited View</field>
+        <field name="model_id" ref="model_crm_lead_demo_ept"/>
+        <field name="groups" eval="[(4,ref('crm_lead_demo_ept.crm_lead_demo_ept_group_salesperson'))]"/>
+        <field name="domain_force">['|','|',('channel','=','Television'),('channel','=','Newspaper'),'|',('channel','=','Phone Call'),('channel','=','SMS')]</field>
+
+    </record>
+
+</odoo>
