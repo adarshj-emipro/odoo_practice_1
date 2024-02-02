@@ -3,8 +3,8 @@
 <!--    Category creation-->
     <record id="crm_lead_demo_ept_category" model="ir.module.category">
         <field name="name">CRM Lead Management</field>
-        <field name="description">This is the category fro crm lead demo ept module.</field>
-        <field name="sequence">1</field>
+        <field name="description">This is the category for crm lead demo ept module.</field>
+        <field name="sequence">45</field>
     </record>
 
 <!--    Creating the Salesperson group-->
