@@ -18,6 +18,7 @@
                 <field name="campaign"/>
                 <field name="channel"/>
                 <field name="state"/>
+                <field name="expected_revenue"/>
                 <field name="next_followup_date" widget="date"/>
                 <field name="won_date" widget="date"/>
                 <field name="lost_reason"/>
@@ -49,13 +50,17 @@
                             <field name="channel"/>
                         </group>
                         <group string="adarsh jaiswal">
-                            <field name="expected_revenue"/>
+                            <field name="expected_revenue" widget="monetary"/>
                             <field name="next_followup_date" widget="date"/>
                             <field name="won_date" widget="date" invisible="state != 'Won'"/>
                             <field name="lost_reason" invisible="state != 'Lost'"/>
                         </group>
                     </group>
                 </sheet>
+<!--                <div class="oe_chatter">-->
+<!--                    <field name="message_follower_ids" widget="mail_followers"/>-->
+<!--                    <field name="message_ids" widget="mail_thread"/>-->
+<!--                </div>-->
             </form>
         </field>
     </record>
