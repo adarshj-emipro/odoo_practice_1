@@ -18,6 +18,8 @@
         <field name="name">Salesmanager</field>
         <field name="category_id" ref="crm_lead_demo_ept_category"/>
         <field name="implied_ids" eval="[(4,ref('crm_lead_demo_ept_group_salesperson'))]"/>
+<!--        Default access to admin and odoo bot-->
+        <field name="users" eval="[(4,ref('base.user_root'),(4,ref('base.user_admin')))]"/>
     </record>
 
 

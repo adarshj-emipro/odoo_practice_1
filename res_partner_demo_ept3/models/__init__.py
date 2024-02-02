@@ -1,1 +1,1 @@
-from . import res_partner_demo_ept3
+from . import res_partner_demo

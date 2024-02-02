@@ -63,9 +63,9 @@
                 <field name="state"/>
                 <field name="country"/>
                 <field name="zip_code"/>
-                <filter string="Male" name="gender" domain="[('gender','=','Male')]"/>
-                <filter string="Female" name="gender" domain="[('gender','=','Female')]"/>
-                <filter string="Transgender" name="gender" domain="[('gender','=','Transgender')]"/>
+                <filter string="Male" name="gender_male" domain="[('gender','=','Male')]"/>
+                <filter string="Female" name="gender_female" domain="[('gender','=','Female')]"/>
+                <filter string="Transgender" name="gender_trans" domain="[('gender','=','Transgender')]"/>
                 <filter string="Wear Specs" name="is_spectacles" domain="[('is_spectacles','=',True)]"/>
                 <group expand="0" string="Group By">
                     <filter string="Country" name="=country" domain="[]" context="{'group_by':'country'}"/>

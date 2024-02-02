@@ -39,7 +39,7 @@
                 </header>
                 <sheet>
                     <group>
-                        <group>
+                        <group string="adarsh jaiswal">
                             <field name="name"/>
                             <field name="customer_email" widget="email"/>
                             <field name="customer_phone" widget="phone"/>
@@ -48,10 +48,10 @@
                             <field name="campaign"/>
                             <field name="channel"/>
                         </group>
-                        <group>
+                        <group string="adarsh jaiswal">
                             <field name="expected_revenue"/>
                             <field name="next_followup_date" widget="date"/>
-                            <field name="won_date" widget="date" invisible="state != 'Won'" />
+                            <field name="won_date" widget="date" invisible="state != 'Won'"/>
                             <field name="lost_reason" invisible="state != 'Lost'"/>
                         </group>
                     </group>
@@ -70,10 +70,14 @@
                 <field name="name"/>
                 <field name="customer_email"/>
                 <field name="customer_phone"/>
+                <!--                <filter name="next_followup_date" string="Today"-->
+                <!--                        domain="[('next_followup_date','=',datetime.date.today().strftime('%%Y-%%m-%%d'))]"/>-->
                 <filter name="next_followup_date" string="Today"
-                        domain="[('next_followup_date','=',datetime.date.today().strftime('%%Y-%%m-%%d'))]"/>
+                        domain="[('next_followup_date','=', context_today().strftime('%Y-%m-%d'))]"/>
+                <filter name="state_won" string="won" domain="[('state','=','Won')]"/>
+
                 <group expand="0" string="Group by">
-                    <filter name="channel" string="Channel" context="{'group_by':'channel'}"/>
+                    <filter name="channel_name" string="Channel" context="{'group_by':'channel'}"/>
                 </group>
             </search>
 
@@ -89,6 +93,7 @@
         <field name="res_model">crm.lead.demo.ept</field>
         <field name="view_mode">tree,form</field>
         <field name="search_view_id" ref="crm_lead_demo_ept_view_search"/>
+        <field name="context">{'search_default_state_won':1}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Create new Record to Display.

@@ -53,11 +53,11 @@
                 <field name="name"/>
                 <field name="d_name"/>
                 <field name="position"/>
-                <filter name="type" string="Permanent" domain="[('type','=','Permanent')]"/>
-                <filter name="type" string="Ad Hoc" domain="[('type','=','Ad Hoc')]"/>
-                <filter name="gender" string="Male" domain="[('gender','=','Male')]"/>
-                <filter name="gender" string="Female" domain="[('gender','=','Female')]"/>
-                <filter name="gender" string="Transgender" domain="[('gender','=','Transgender')]"/>
+                <filter name="type_permanent" string="Permanent" domain="[('type','=','Permanent')]"/>
+                <filter name="type_ad_hoc" string="Ad Hoc" domain="[('type','=','Ad Hoc')]"/>
+                <filter name="gender_male" string="Male" domain="[('gender','=','Male')]"/>
+                <filter name="gender_female" string="Female" domain="[('gender','=','Female')]"/>
+                <filter name="gender_trans" string="Transgender" domain="[('gender','=','Transgender')]"/>
                 <group expand="0" string="Group By">
                     <filter name="position" string="Job Position" context="{'group_by':'position'}"/>
                     <filter name="d_name" string="Department Name" context="{'group_by':'d_name'}"/>
@@ -76,7 +76,8 @@
         <field name="res_model">employee.demo.ept</field>
         <field name="view_mode">tree,form</field>
         <field name="search_view_id" ref="employee_demo_ept_view_search"/>
-        <field name="context">{'default_type':'Permanent'}</field>
+<!--        <field name="context">{'default_type':'Permanent'}</field>-->
+        <field name="context">{'search_default_type_permanent':1}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Create New Record Now.
